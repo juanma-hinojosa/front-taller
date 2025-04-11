@@ -1,0 +1,123 @@
+/* Reset básico */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  background-color: transparent;
+  color: white;
+}
+
+.navbar.scrolled {
+  background-color: #b00000; /* rojo al hacer scroll */
+  color: #f3f3f3;
+}
+
+.navbar-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 2rem;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+/* Desktop links */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: currentColor;
+  transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Mobile styles */
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    z-index: 2001; /* asegurarse que esté por encima del menú */
+    color: white;
+  }
+  
+
+@media (max-width: 768px) {
+  .navbar {
+    background-color: #111; /* navbar móvil NO transparente */
+    padding: 1rem;
+  }
+
+  .navbar-inner {
+    flex-direction: row;
+    justify-content: center; /* centramos el logo */
+    align-items: center;
+    width: 100%;
+    position: relative; /* necesario para posicionar el ícono a la derecha */
+  }
+
+  .logo {
+    margin-bottom: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 70%;
+    background-color: #b00000;
+    flex-direction: column;
+    padding: 4rem 2rem;
+    gap: 2rem;
+    transition: right 0.3s ease;
+  }
+
+  .nav-links.open {
+    right: 0;
+  }
+
+  .nav-links a {
+    font-size: 1.5rem;
+    color: white;
+  }
+}

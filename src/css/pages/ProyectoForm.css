@@ -1,0 +1,65 @@
+.form-container {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+  }
+  
+  .form-container h2 {
+    color: #b00000;
+    margin-bottom: 1rem;
+  }
+  
+  .admin-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .admin-form input,
+  .admin-form textarea {
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  }
+  
+  .admin-form label {
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+  
+  .admin-form button {
+    background-color: #b00000;
+    color: white;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .admin-form button:hover {
+    background-color: #900000;
+  }
+  
+  .preview-img {
+    margin-top: 0.5rem;
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  }
+  
+  .preview-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  .preview-galeria img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  
